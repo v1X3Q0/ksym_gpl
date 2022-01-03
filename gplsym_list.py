@@ -79,10 +79,6 @@ def parse_symstore(symstore_name):
             break
         ksymstr = liksplit[0]
         gpl = liksplit[1]
-        if gpl == "EXPORT_SYMBOL":
-            gpl = "NONGPL_SYM"
-        else:
-            gpl = "GPL_SYM"
         symvers_new[ksymstr] = gpl
     return symvers_new
 
