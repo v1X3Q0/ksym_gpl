@@ -2,13 +2,13 @@ import argparse
 import os
 
 parser = argparse.ArgumentParser(description='Process some integers.')
-parser.add_argument('-i', '--new_sv',
+parser.add_argument('-i', '--new_sv', type=str,
                     help='new symvers to parse')
-parser.add_argument('-o', '--sv_store',
-                    help='symvers store to append to')
+parser.add_argument('-o', '--sv_store', type=str, default="svstore.txt",
+                    help='symvers store to append to, default: svstore.txt')
 parser.add_argument('-a', dest='append_sv', action='store_true',
                     help='append to the input sv_store')
-parser.add_argument('--header',
+parser.add_argument('--header', type=str,
                     help='header file to generate')
                     
 args = parser.parse_args()
