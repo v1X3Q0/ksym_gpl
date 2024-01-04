@@ -5,3 +5,12 @@ add_custom_command(
     WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
 )
 add_custom_target(ksym_gpl ALL DEPENDS ${SV_GPL})
+
+file(GLOB ConfigFiles ${CMAKE_CURRENT_SOURCE_DIR}/svstore.txt)
+
+add_custom_target(copy)
+foreach(ConfigFile ${ConfigFiles})
+  add_custom_command(TARGET copy PRE_BUILD
+                     COMMAND ${CMAKE_COMMAND} -E
+                         copy ${ConfigFile} ${CMAKE_CURRENT_BINARY_DIR}/svstore.txt)
+endforeach()
