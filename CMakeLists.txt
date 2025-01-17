@@ -1,3 +1,6 @@
+cmake_minimum_required(VERSION 3.5.0)
+project(SV_GPL)
+
 set(SV_GPL sv_gpl.h)
 add_custom_command(
     OUTPUT ${SV_GPL}
